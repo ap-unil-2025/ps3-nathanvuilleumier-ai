@@ -2,7 +2,6 @@
 Problem 2: Temperature Converter
 Convert between Celsius and Fahrenheit temperatures.
 """
-
 def celsius_to_fahrenheit(celsius):
     """
     Convert Celsius to Fahrenheit.
@@ -15,8 +14,10 @@ def celsius_to_fahrenheit(celsius):
         float: Temperature in Fahrenheit
     """
     # TODO: Implement this function
-    pass
 
+    return float((celsius*9/5)+32)
+    
+    pass
 
 def fahrenheit_to_celsius(fahrenheit):
     """
@@ -30,10 +31,21 @@ def fahrenheit_to_celsius(fahrenheit):
         float: Temperature in Celsius
     """
     # TODO: Implement this function
+    return (fahrenheit-32)*5/9
+    
     pass
 
-
+temperature = float(input("Enter your temperature"))
+current_unit = input("Is this in Celsius or Fahrenheit? (C/F): ").strip().upper()
 def temperature_converter():
+    if current_unit== "C":
+        result= celsius_to_fahrenheit(temperature)
+        print(temperature, "C=", round(result,2), "F")
+    elif current_unit== "F":
+        result==fahrenheit_to_celsius(temperature)
+        print(temperature, "F=", round(result,2), "C")
+    else:
+        print("Invalid input. Please enter C or F")
     """
     Interactive temperature converter.
     Ask user for:
